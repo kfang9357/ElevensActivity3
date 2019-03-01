@@ -33,16 +33,15 @@ public class Shuffler {
 
     public static void perfectShuffle(int[] values) {
         int[] shuffled = new int[values.length];
-        int mid = (values.length + 1)/2;
 
         int k = 0;
-        for (int j = 0; j < mid; j++) {
+        for (int j = 0; j < 25; j++) {
             shuffled[k] = values[j];
             k += 2;
         }
 
         k = 1;
-        for (int j = mid; j < values.length; j++) {
+        for (int j = 26; j < values.length; j++) {
             shuffled[k] = values[j];
             k += 2;
         }
@@ -64,3 +63,17 @@ public class Shuffler {
         }
     }
 }
+
+/** A better version, the “efficient selection shuffle,” works as follows:
+ For k = 51 down to 1,
+ − Generate a random integer r between 0 and k, inclusive;
+ − Exchange cards[k] and cards[r].
+
+ This has the same structure as selection sort:
+ For k = 51 down to 1,
+ − Find r, the position of the largest value among cards[0] through cards[k];
+ − Exchange cards[k] and cards[r].
+
+ The selection shuffle algorithm does not require to a loop to find the largest (or smallest) value to swap, so
+ it works quickly.
+ **/
