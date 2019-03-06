@@ -55,7 +55,7 @@ public class Shuffler {
 
     public static void selectionShuffle(int[] values) {
 
-        for (int k = values.length; k >0; k--) {
+        for (int k = values.length; k >1; k--) {
             int j = (int)(Math.random() * (values.length + 1));
             int temp = values[j];
             values[j] = values[k-1];
